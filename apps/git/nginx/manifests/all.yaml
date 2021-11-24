@@ -8,7 +8,7 @@ data:
     env MY_SECRET;
     http {
         server {
-            listen 8080;
+            listen 8084;
             location / {
                 set_by_lua $my_secret 'return os.getenv("MY_SECRET")';
                 return 200 $my_secret;
@@ -23,9 +23,10 @@ metadata:
   annotations:
 
     # Our special annotation to tell AVP where the secrets are
-    avp.kubernetes.io/path: "secret/data/my-nginx"
+    avp.kubernetes.io/path: "projects/466905167747/secrets/sample"
+    avp.kubernetes.io/secret-version: "2"
 stringData:  
-  MY_SECRET: <password>
+  MY_SECRET: <sample>
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -46,7 +47,7 @@ spec:
         image: docker.io/openresty/openresty:1.19.9.1-0-alpine
         imagePullPolicy: IfNotPresent
         ports:
-        - containerPort: 8080
+        - containerPort: 8084
         envFrom:
         - secretRef:
             name: my-nginx
