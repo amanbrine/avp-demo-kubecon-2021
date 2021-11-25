@@ -29,7 +29,7 @@ metadata:
     
 data:  
   MY_SECRET: <sample>
-  username: <path:projects/466905167747/secrets/test#test
+  username: <path:projects/466905167747/secrets/test#test>
 ---
 apiVersion: apps/v1
 kind: Deployment
