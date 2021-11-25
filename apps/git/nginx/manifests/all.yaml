@@ -26,7 +26,7 @@ metadata:
     #avp.kubernetes.io/path: "projects/466905167747/secrets/sample"
     #avp.kubernetes.io/secret-version: "2"
 stringData:  
-  MY_SECRET: <path:projects/466905167747/secrets/test#test>
+  MY_SECRET: <path:projects/466905167747/secrets/test#test | base64encode>
 ---
 apiVersion: apps/v1
 kind: Deployment
