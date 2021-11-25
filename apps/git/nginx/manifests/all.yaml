@@ -24,6 +24,7 @@ metadata:
 
     # Our special annotation to tell AVP where the secrets are
     avp.kubernetes.io/path: "projects/466905167747/secrets/sample"
+    avp.kubernetes.io/secret-version: "2"
 stringData:  
   MY_SECRET: <sample>
 ---
